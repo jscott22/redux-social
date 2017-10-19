@@ -1,0 +1,9 @@
+export const FETCH_USER_PROFILE = 'fetch_user_profile';
+export const USER_PROFILE_SUCCESS = 'user_profile_success';
+export const USER_PROFILE_FAILURE = 'user_profile_failure';
+export const PROMOTE_USER_REQUEST = 'promote_user_request';
+export const PROMOTE_USER_SUCCESS = 'promote_user_success';
+export const PROMOTE_USER_FAILURE = 'promote_user_failure';
+export const REMOVE_USER_REQUEST = 'remove_user_request';
+export const REMOVE_USER_SUCCESS = 'remove_user_success';
+export const REMOVE_USER_FAILURE = 'remove_user_failure';

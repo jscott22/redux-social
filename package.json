@@ -1,0 +1,50 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "cloudinary-react": "^1.0.4",
+    "lodash": "^4.17.4",
+    "material-ui": "^0.19.3",
+    "moment": "^2.18.1",
+    "normalize.css": "^7.0.0",
+    "normalizr": "^3.2.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-dropzone": "^4.1.3",
+    "react-google-button": "^0.3.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.14",
+    "redux": "^3.7.2",
+    "redux-form": "^7.1.0",
+    "redux-thunk": "^2.2.0",
+    "uuid": "^3.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start --env=dev",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "proxy": {
+    "/auth/*": {
+      "target": "http://localhost:3090"
+    },
+    "/api/*": {
+      "target": "http://localhost:3090"
+    }
+  },
+  "devDependencies": {
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "gh-pages": "^1.0.0",
+    "react-test-renderer": "^16.0.0",
+    "redux-mock-store": "^1.3.0"
+  },
+  "homepage": "https://jscott22.github.io"
+}

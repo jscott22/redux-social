@@ -44,10 +44,18 @@ export const signIn = ({email, password}, history) => async dispatch => {
         const response = await axios.post(
             `${ROOT_URL}/auth/signin`,
             {email, password});
-        dispatch(checkAuth());
-        history.push('/feed');
+        if (response.data.user) {
+            dispatch({
+                type: AUTH_USER,
+                payload: {
+                    user: response.data.user,
+                    error: null
+                }
+            });
+            history.push('/feed');
+        }
     } catch ({response: {data: {message}}}) {
-        dispatch(authError("Invalid email or password"));
+        dispatch(authError("Invalid "));
     }
 };
 

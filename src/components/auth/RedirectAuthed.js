@@ -12,7 +12,7 @@ export default function(ComposedComponent) {
         }
 
         componentWillUpdate(nextProps) {
-            if (this.nextProps.authed) {
+            if (nextProps.authed) {
                 this.props.history.push('/feed');
             }
         }

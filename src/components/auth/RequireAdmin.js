@@ -12,7 +12,7 @@ export default function(ComposedComponent) {
         }
 
         componentWillUpdate(nextProps) {
-            if (!this.nextProps.admin) {
+            if (!nextProps.admin) {
                 this.props.history.push('/feed');
             }
         }

@@ -12,7 +12,7 @@ export default function(ComposedComponent) {
         }
 
         componentWillUpdate(nextProps) {
-            if (!this.props.fetching && this.nextProps.authenticated === false) {
+            if (!this.props.fetching && nextProps.authenticated === false) {
                 this.props.history.push('/signin');
             }
         }

@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 
 import RequireAuth from './components/auth/RequireAuth';
 import RequireAdmin from './components/auth/RequireAdmin';
+import RedirectAuthed from './components/auth/RedirectAuthed';
 
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
@@ -17,8 +18,8 @@ export default function routes() {
         return(
             <Switch>
                 <Route exact path="/" component={Landing}/>
-                <Route path="/signin" component={SignIn}/>
-                <Route path="/signup" component={SignUp}/>
+                <Route path="/signin" component={RedirectAuthed(SignIn)}/>
+                <Route path="/signup" component={RedirectAuthed(SignUp)}/>
                 <Route path="/create" component={RequireAuth(CreatePost)}/>
                 <Route path="/feed" component={RequireAuth(Feed)}/>
                 <Route path="/profile/:userId?/" component={RequireAuth(UserProfile)}/>

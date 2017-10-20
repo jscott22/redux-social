@@ -44,7 +44,6 @@ export const signIn = ({email, password}, history) => async dispatch => {
         const response = await axios.post(
             `${ROOT_URL}/auth/signin`,
             {email, password});
-        debugger;
         if (response.data.user) {
             dispatch({
                 type: AUTH_USER,

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -23,10 +24,11 @@ const styles = {
     }
 };
 
-export default () => (
-        <div style={styles.container}>
-            <h1 style={styles.centered}>Welcome to Redux Social!</h1>
-            <h3 style={styles.centered}>Redux Social is the most functional, cloud based, status quo disrupting social media platform around.</h3>
+class Landing extends Component {
+
+    renderButtons = (auth) => {
+        return !auth.user
+            ?
             <div style={styles.buttons}>
                 <Link to={'/signup'}>
                     <RaisedButton style={styles.margin} secondary={true} label={"Sign Up"}/>
@@ -35,5 +37,20 @@ export default () => (
                     <RaisedButton secondary={true} label={"Sign In"}/>
                 </Link>
             </div>
-        </div>
-);
+            : '';
+    };
+
+    render() {
+        return (
+            <div style={styles.container}>
+                <h1 style={styles.centered}>Welcome to Redux Social!</h1>
+                <h3 style={styles.centered}>Redux Social is the most functional, cloud based, status quo disrupting
+                    social media platform around.</h3>
+                {this.renderButtons(this.props.auth)}
+            </div>
+        );
+    }
+}
+
+export default connect(({auth}) => ({auth}))(Landing);
+

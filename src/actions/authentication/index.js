@@ -55,7 +55,7 @@ export const signIn = ({email, password}, history) => async dispatch => {
             history.push('/feed');
         }
     } catch ({response: {data: {message}}}) {
-        dispatch(authError(message));
+        dispatch(authError("Invalid email or password"));
     }
 };
 
@@ -64,8 +64,8 @@ export const signOut = history => async dispatch =>{
         await axios.get(`${ROOT_URL}/auth/signout`);
         dispatch({type: UNAUTH_USER});
         history.push('/');
-    } catch({response: {data: {error}}}) {
-        dispatch(authError(error));
+    } catch({response: {data: {message}}}) {
+        dispatch(authError(message));
     }
 };
 

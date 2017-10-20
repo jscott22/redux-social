@@ -37,7 +37,7 @@ class SignIn extends Component {
         const error = this.props.errorMessage;
         if (error) {
             return (
-                <div>
+                <div style={styles.centered}>
                     {error}
                 </div>
             );
